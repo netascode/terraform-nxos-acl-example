@@ -1,0 +1,25 @@
+---
+acls:
+  - name: ACL1
+    entries:
+      - seq: 10
+        action: permit
+        protocol: tcp
+        src_prefix: 10.1.1.0
+        src_prefix_length: 24
+        dst_prefix: 20.1.1.1
+        dst_prefix_length: 32
+        dst_port: 443
+      - seq: 20
+        action: deny
+        protocol: ip
+        logging: true
+  - name: ACL2
+    entries:
+      - seq: 10
+        action: permit
+        protocol: udp
+        src_prefix: 1.1.1.1
+        src_prefix_length: 32
+        dst_prefix: 2.2.2.2
+        dst_prefix_length: 32
